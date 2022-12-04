@@ -1,0 +1,280 @@
+:root{
+    --fuente-principal: 'Montserrat', sans-serif;
+    --blanco: #ffffff;
+    --primario: #1E1E1E;
+}
+html{
+    font-size: 62.5%;
+    box-sizing: border-box; /*selector para el borde para la modificacion del tamaño no afecte*/
+}
+*, *:before, *:after{
+    box-sizing: inherit; /* calcula los px y hace que no se salgan */
+}
+img{
+    width: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+body{
+    background-color: rgb(233, 178, 225);
+    font-family: var(--fuente-principal);
+    margin: 0%;
+    padding: 0%; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* abarca toda la panatalla */
+}
+h2{
+    font-weight: bold;
+    font-size: 3.5rem;
+}
+h3{
+    font-size: 1.5rem;
+}
+p{
+    color: var(--blanco);
+    font-weight: bold;
+}
+/* Encabezado */
+header{
+    text-align: center;
+    background-color: var(--primario);
+    color: var(--blanco);
+    padding: .9rem;
+}
+footer{
+    text-align: center;
+    background-color: var(--primario);
+    padding: .4rem;
+    margin-top: auto;
+    width: 100%;
+}
+footer p{
+    font-size: 1.3rem;
+}
+.footer_comados{
+    display: flex;
+    justify-content: space-around;
+}
+.footer_comados a{
+    text-decoration: none;
+}
+@media (max-width: 600px) {
+    footer p{
+        font-size: 1.1rem;
+    }
+}
+
+/* MAIN */
+.container{
+    max-width: 90rem;
+    margin: 10rem auto;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    gap: 1rem;
+}
+.nombre_pokemon{
+    background-color: var(--primario);
+    padding: .5rem;
+    text-align: center;
+    translate:translateY(-20px); 
+    font-size: 2rem;
+}
+@media (min-width: 600px) {
+    .nombre_pokemon{
+        display: none;
+        position: relative;
+        width: 10rem;
+        border-radius: .5rem;
+        font-size: 1rem;
+    }
+    .nombre{
+        position: absolute;
+    }
+}
+.imagen img{
+    filter: drop-shadow(1px 1px 3px black) ;
+}
+@media (min-width: 600px) {
+    .imagen:hover .nombre_pokemon{
+        display: inline-block;
+    }
+}
+
+.imagen:hover img{
+    transform: translateY(-15px);/* se levanta la img */
+    cursor: pointer;
+    filter: drop-shadow(5px 5px 5px black) ;
+}
+
+.container .imagen .nombre{
+    top: 17rem;
+}
+.nombre_pokemon{
+    right: 15rem;
+}
+@media (max-width: 600px) {
+    .name_1{ color: #df7d0d;}
+    .name_2{ color: #80b6b2;}
+    .name_3{color: #dbbb29;}
+    .name_4{color: #79A75B;}
+    .name_5{color: #ffffff;}
+}
+@media (min-width: 600px) {
+    .nombre_pokemon::before{
+        content: "";
+        position: absolute;/* se localizara deacuerdo a el contnedro inmediato (img) */
+        width: 1px;
+        height: 1px;
+        left: 40%;
+        bottom: -20px;
+        border-top: solid 10px var(--primario);
+        border-bottom: solid 10px transparent;
+        border-left: solid 10px transparent;
+        border-right: solid 10px transparent;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid{
+        grid-template-columns:repeat(1, 1fr);
+        text-align: center;
+    }
+    .imagen img{
+        width: 30%;
+    }
+}
+
+/* CARD */
+.container_card{
+    margin-top: 5rem;
+    margin-bottom: 5rem; 
+    display: flex;
+    justify-content: center;
+}
+.card {
+    background-color: rgb(219, 217, 211);
+    width: 330px;
+    border-radius: 15px;
+    overflow: hidden; /* si la img se desborda no se sale del container */
+    box-shadow: 3px 3px 17px black;
+}
+@media (max-width: 600px) {
+    .card{
+        width: 30rem;
+    }    
+}
+.card-header {
+    width: 100%;
+    display: block;
+}
+.card-body {
+    display: flex; /* los hubica horizontalmente */
+    flex-direction: column; /* los hubica verticalmente */
+    align-items: center;
+    border-bottom: 1px solid #beb9b9;
+}
+.card-body-contentimg {
+    border: 5px solid #F67C55;
+    border-radius: 50%;
+    background-color: #F8B78B;
+    box-shadow: 0px 0px 10px rgb(31, 28, 26);
+    margin-top: -58px;
+  }
+.card-body-contentimg-img {
+    padding: 20px;
+    width: 15rem;
+    height: 15rem;
+}
+.card-body-title {
+    margin-top: 2rem;
+    font-size: 3rem;
+}
+.card-body-text{
+    color: #1E1E1E;
+    font-size: 1.3rem;
+}
+.card-body-title span {
+    color: #be792a;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-around;
+}
+.card-footer-poder {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.card-footer-poder-img{
+    width: 35%;
+}
+/* SQUIRTLE */
+.card-body-contentimg-2 {
+    border: 5px solid #7e9bd8;
+    border-radius: 50%;
+    background-color: #a3ccdf;
+    box-shadow: 0px 0px 10px rgb(31, 28, 26);
+    margin-top: -58px;
+  }
+  .card-body-title-2 {
+    margin-top: 2rem;
+    font-size: 3rem;
+}
+.card-body-title-2 span {
+    color: #235c9c;
+}
+/* PIKACHU */
+.card-body-contentimg-3 {
+    border: 5px solid #d1b933;
+    border-radius: 50%;
+    background-color: #ddd67a;
+    box-shadow: 0px 0px 10px rgb(31, 28, 26);
+    margin-top: -58px;
+  }
+.card-body-title-3 {
+    margin-top: 2rem;
+    font-size: 3rem;
+}
+  .card-body-title-3 span {
+    color: #b8ae2f;
+}
+/* BULBASAUR */
+.card-body-contentimg-4 {
+    border: 5px solid #33d168;
+    border-radius: 50%;
+    background-color: #96dd7a;
+    box-shadow: 0px 0px 10px rgb(31, 28, 26);
+    margin-top: -58px;
+  }
+.card-body-title-4 {
+    margin-top: 2rem;
+    font-size: 3rem;
+}
+  .card-body-title-4 span {
+    color: #30881f;
+}
+/* MEW */
+.card-body-contentimg-5 {
+    border: 5px solid #6b6d6c;
+    border-radius: 50%;
+    background-color: #b9b9b9;
+    box-shadow: 0px 0px 10px rgb(31, 28, 26);
+    margin-top: -58px;
+  }
+.card-body-title-5 {
+    margin-top: 2rem;
+    font-size: 3rem;
+}
+  .card-body-title-5 span {
+    color: #6a6b6a;
+}
+.card-body-contentimg-img-5 {
+    padding: 20px;
+    width: 15.5rem;
+    height: 15.5rem;
+}
