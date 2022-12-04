@@ -61,7 +61,7 @@ footer p{
 }
 @media (max-width: 600px) {
     footer p{
-        font-size: 1.1rem;
+        font-size: 1.4rem;
     }
 }
 
@@ -156,7 +156,7 @@ footer p{
     justify-content: center;
 }
 .card {
-    background-color: rgb(219, 217, 211);
+    background-color: rgb(241, 240, 237);
     width: 330px;
     border-radius: 15px;
     overflow: hidden; /* si la img se desborda no se sale del container */
@@ -262,7 +262,7 @@ footer p{
 .card-body-contentimg-5 {
     border: 5px solid #6b6d6c;
     border-radius: 50%;
-    background-color: #b9b9b9;
+    background-color: #c4c0c0;
     box-shadow: 0px 0px 10px rgb(31, 28, 26);
     margin-top: -58px;
   }
